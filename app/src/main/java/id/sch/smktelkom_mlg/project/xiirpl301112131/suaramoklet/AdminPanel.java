@@ -24,10 +24,9 @@ public class AdminPanel extends AppCompatActivity {
         Firebase ref2 = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/kesiswaan/ak01/deskripsi");
                     ref.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    tampiljudul.setText(dataSnapshot.getValue().toString());
+                public void onDataChange(DataSnapshot ds) {
+                    tampiljudul.setText(ds.getValue().toString());
                 }
-
             @Override
             public void onCancelled(FirebaseError firebaseError) {
 
