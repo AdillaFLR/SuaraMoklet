@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "354444663268",
+    "firebase_url": "https://suaramoklet.firebaseio.com",
+    "project_id": "suaramoklet",
+    "storage_bucket": "suaramoklet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354444663268:android:f7774bc43df33390",
+        "android_client_info": {
+          "package_name": "id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354444663268-37o1ophm44c91m9is48cr7com0dl3suq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfyVnYzCQsa0KmAjBYHIjGd6pW-CLHGnI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
