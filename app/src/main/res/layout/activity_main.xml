@@ -10,15 +10,35 @@
     tools:context="id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.MainActivity">
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/view"
+        android:id="@+id/CustomView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/CustomView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true">
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email" />
 
     </android.support.design.widget.TextInputLayout>
 
+
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/CustomView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonLogin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/editTextPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -30,22 +50,5 @@
         android:layout_centerVertical="true"
         android:text="Login" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonLogin"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="Password" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="Email" />
 
 </RelativeLayout>
