@@ -68,5 +68,4 @@ public abstract class GuruAdapter extends FirebaseRecyclerAdapter<GuruAdapter.Vi
             textViewDeskripsi = (TextView) view.findViewById(R.id.textview_deskripsi);
         }
     }
-
 }
