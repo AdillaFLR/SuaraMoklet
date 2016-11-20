@@ -16,7 +16,7 @@ import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.R;
 /**
  * Created by SMK Telkom SP Malang on 20-Nov-16.
  */
-public abstract class GuruAdapter extends FirebaseRecyclerAdapter<GuruAdapter.ViewHolder, GuruAspirasi> {
+public class GuruAdapter extends FirebaseGuruRecyclerAdapter<GuruAdapter.ViewHolder, GuruAspirasi> {
 
     public GuruAdapter(Query mQuery, Class<GuruAspirasi> itemClass, ArrayList<GuruAspirasi> mAdapterItems, ArrayList<String> mAdapterKeys) {
         super(mQuery, itemClass, mAdapterItems, mAdapterKeys);
@@ -31,7 +31,7 @@ public abstract class GuruAdapter extends FirebaseRecyclerAdapter<GuruAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(GuruAdapter.ViewHolder holder, int position) {
         GuruAspirasi item = getItem(position);
         holder.textViewJudul.setText(item.getJudul());
         holder.textViewDeskripsi.setText(item.getDeskripsi());
@@ -64,8 +64,10 @@ public abstract class GuruAdapter extends FirebaseRecyclerAdapter<GuruAdapter.Vi
 
         public ViewHolder(View view) {
             super(view);
-            textViewJudul = (TextView) view.findViewById(R.id.textview_judul);
-            textViewDeskripsi = (TextView) view.findViewById(R.id.textview_deskripsi);
+            textViewJudul = (TextView) view.findViewById(R.id.textview_judulguru);
+            textViewDeskripsi = (TextView) view.findViewById(R.id.textview_deskripsiguru);
         }
     }
+
 }
+
