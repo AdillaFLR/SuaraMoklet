@@ -10,50 +10,50 @@ import com.firebase.client.Query;
 
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.Aspirasi;
+import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.GuruAspirasi;
 import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.R;
 
 /**
  * Created by SMK Telkom SP Malang on 20-Nov-16.
  */
-public class GuruAdapter extends FirebaseRecyclerAdapter<GuruAdapter.ViewHolder, Aspirasi> {
+public abstract class GuruAdapter extends FirebaseRecyclerAdapter<GuruAdapter.ViewHolder, GuruAspirasi> {
 
-    public GuruAdapter(Query mQuery, Class<Aspirasi> itemClass, ArrayList<Aspirasi> mAdapterItems, ArrayList<String> mAdapterKeys) {
-        super(mQuery, itemClass, mAdapterItems, mAdapterKeys);
+    public GuruAdapter(Query mQuery, Class<GuruAspirasi> itemClass, ArrayList<GuruAspirasi> mGuruAdapterItems, ArrayList<String> mAdapterKeys) {
+        super(mQuery, itemClass, mGuruAdapterItems, mAdapterKeys);
     }
 
     @Override
     public GuruAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.aspirasi_item, parent, false);
+                .inflate(R.layout.guru_item, parent, false);
 
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Aspirasi item = getItem(position);
+        GuruAspirasi item = getItem(position);
         holder.textViewJudul.setText(item.getJudul());
         holder.textViewDeskripsi.setText(item.getDeskripsi());
     }
 
     @Override
-    protected void itemAdded(Aspirasi item, String key, int position) {
+    protected void itemAdded(GuruAspirasi item, String key, int position) {
 
     }
 
     @Override
-    protected void itemChanged(Aspirasi oldItem, Aspirasi newItem, String key, int position) {
+    protected void itemChanged(GuruAspirasi oldItem, GuruAspirasi newItem, String key, int position) {
 
     }
 
     @Override
-    protected void itemRemoved(Aspirasi item, String key, int position) {
+    protected void itemRemoved(GuruAspirasi item, String key, int position) {
 
     }
 
     @Override
-    protected void itemMoved(Aspirasi item, String key, int oldPosition, int newPosition) {
+    protected void itemMoved(GuruAspirasi item, String key, int oldPosition, int newPosition) {
 
     }
 
