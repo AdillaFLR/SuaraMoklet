@@ -18,8 +18,8 @@ import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.R;
  */
 public abstract class GuruAdapter extends FirebaseRecyclerAdapter<GuruAdapter.ViewHolder, GuruAspirasi> {
 
-    public GuruAdapter(Query mQuery, Class<GuruAspirasi> itemClass, ArrayList<GuruAspirasi> mGuruAdapterItems, ArrayList<String> mAdapterKeys) {
-        super(mQuery, itemClass, mGuruAdapterItems, mAdapterKeys);
+    public GuruAdapter(Query mQuery, Class<GuruAspirasi> itemClass, ArrayList<GuruAspirasi> mAdapterItems, ArrayList<String> mAdapterKeys) {
+        super(mQuery, itemClass, mAdapterItems, mAdapterKeys);
     }
 
     @Override
