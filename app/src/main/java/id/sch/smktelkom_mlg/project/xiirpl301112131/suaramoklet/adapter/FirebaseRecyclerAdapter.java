@@ -2,9 +2,7 @@ package id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.adapter;
 
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.ViewGroup;
-
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -23,47 +21,6 @@ import java.util.ArrayList;
         private Class<T> mItemClass;
         private ArrayList<T> mItems;
         private ArrayList<String> mKeys;
-
-        /**
-         * @param query     The Firebase location to watch for data changes.
-         *                  Can also be a slice of a location, using some combination of
-         *                  <code>limit()</code>, <code>startAt()</code>, and <code>endAt()</code>.
-         * @param itemClass The class of the items.
-         */
-        public FirebaseRecyclerAdapter(Query query, Class<T> itemClass) {
-            this(query, itemClass, null, null);
-        }
-
-        /**
-         * @param query     The Firebase location to watch for data changes.
-         *                  Can also be a slice of a location, using some combination of
-         *                  <code>limit()</code>, <code>startAt()</code>, and <code>endAt()</code>.
-         * @param itemClass The class of the items.
-         * @param items     List of items that will load the adapter before starting the listener.
-         *                  Generally null or empty, but this can be useful when dealing with a
-         *                  configuration change (e.g.: reloading the adapter after a device rotation).
-         *                  Be careful: keys must be coherent with this list.
-         * @param keys      List of keys of items that will load the adapter before starting the listener.
-         *                  Generally null or empty, but this can be useful when dealing with a
-         *                  configuration change (e.g.: reloading the adapter after a device rotation).
-         *                  Be careful: items must be coherent with this list.
-         */
-        public FirebaseRecyclerAdapter(Query query, Class<T> itemClass,
-                                       @Nullable ArrayList<T> items,
-                                       @Nullable ArrayList<String> keys) {
-            this.mQuery = query;
-            if (items != null && keys != null) {
-                this.mItems = items;
-                this.mKeys = keys;
-            } else {
-                mItems = new ArrayList<T>();
-                mKeys = new ArrayList<String>();
-            }
-            this.mItemClass = itemClass;
-            query.addChildEventListener(mListener);
-        }
-
-
         private ChildEventListener mListener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
@@ -162,6 +119,46 @@ import java.util.ArrayList;
 
         };
 
+    /**
+     * @param query     The Firebase location to watch for data changes.
+     *                  Can also be a slice of a location, using some combination of
+     *                  <code>limit()</code>, <code>startAt()</code>, and <code>endAt()</code>.
+     * @param itemClass The class of the items.
+     */
+    public FirebaseRecyclerAdapter(Query query, Class<T> itemClass) {
+        this(query, itemClass, null, null);
+    }
+
+
+    /**
+     * @param query     The Firebase location to watch for data changes.
+     *                  Can also be a slice of a location, using some combination of
+     *                  <code>limit()</code>, <code>startAt()</code>, and <code>endAt()</code>.
+     * @param itemClass The class of the items.
+     * @param items     List of items that will load the adapter before starting the listener.
+     *                  Generally null or empty, but this can be useful when dealing with a
+     *                  configuration change (e.g.: reloading the adapter after a device rotation).
+     *                  Be careful: keys must be coherent with this list.
+     * @param keys      List of keys of items that will load the adapter before starting the listener.
+     *                  Generally null or empty, but this can be useful when dealing with a
+     *                  configuration change (e.g.: reloading the adapter after a device rotation).
+     *                  Be careful: items must be coherent with this list.
+     */
+    public FirebaseRecyclerAdapter(Query query, Class<T> itemClass,
+                                   @Nullable ArrayList<T> items,
+                                   @Nullable ArrayList<String> keys) {
+        this.mQuery = query;
+        if (items != null && keys != null) {
+            this.mItems = items;
+            this.mKeys = keys;
+        } else {
+            mItems = new ArrayList<T>();
+            mKeys = new ArrayList<String>();
+        }
+        this.mItemClass = itemClass;
+        query.addChildEventListener(mListener);
+    }
+
         @Override
         public abstract ViewHolder onCreateViewHolder(ViewGroup parent, int viewType);
 
@@ -239,9 +236,11 @@ import java.util.ArrayList;
          * ABSTRACT METHODS THAT MUST BE IMPLEMENTED BY THE EXTENDING ADAPTER.
          */
 
-        /**
-         * Called after an item has been added to the adapter
-         *
+    public abstract void onBindViewHolder(AdminAdapter.ViewHolder holder, int position);
+
+    /**
+     * Called after an item has been added to the adapter
+     *
          * @param item     Added item
          * @param key      Key of the added item
          * @param position Position of the added item in the adapter
