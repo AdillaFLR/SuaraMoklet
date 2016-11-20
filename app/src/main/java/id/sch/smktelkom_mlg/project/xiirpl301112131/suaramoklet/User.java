@@ -40,7 +40,7 @@ public class User extends AppCompatActivity {
         radioK = (RadioButton) findViewById(R.id.radiokesiswaan);
         radioS = (RadioButton) findViewById(R.id.radiosarpra);
 
-        tvHasil = (TextView) findViewById(R.id.editText);
+        //tvHasil = (TextView) findViewById(R.id.editText);
 
     }
 }
