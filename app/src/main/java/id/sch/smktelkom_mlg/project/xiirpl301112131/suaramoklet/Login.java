@@ -44,7 +44,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         Auth = FirebaseAuth.getInstance();
         if (Auth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(getApplicationContext(), User.class));
+            startActivity(new Intent(getApplicationContext(), AdminPanel.class));
         }
 
         bLogin.setOnClickListener(this);
@@ -78,7 +78,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         progressDialog.dismiss();
                         if (task.isSuccessful()) {
                             finish();
-                            startActivity(new Intent(getApplicationContext(), User.class));
+                            startActivity(new Intent(getApplicationContext(), AdminPanel.class));
                         } else {
                             Toast.makeText(getApplicationContext(), "Password atau Username salah", Toast.LENGTH_SHORT).show();
                         }
