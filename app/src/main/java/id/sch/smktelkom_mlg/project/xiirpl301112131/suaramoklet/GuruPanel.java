@@ -63,7 +63,7 @@ public class GuruPanel extends AppCompatActivity {
     private void setupFirebase() {
         Firebase.setAndroidContext(this);
         String firebaseLocation = getResources().getString(R.string.firebase_location);
-        Firebase ref = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/guru");
+        Firebase ref = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/kesiswaan");
         mQuery = ref.orderByChild("judul");
 
     }
