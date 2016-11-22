@@ -236,7 +236,7 @@ public abstract class FireBaseSarpraAdapter<ViewHolder extends RecyclerView.View
      * ABSTRACT METHODS THAT MUST BE IMPLEMENTED BY THE EXTENDING ADAPTER.
      */
 
-    public abstract void onBindViewHolder(GuruAdapter.ViewHolder holder, int position);
+    public abstract void onBindViewHolder(SarpraAdapter.ViewHolder holder, int position);
 
     /**
      * Called after an item has been added to the adapter

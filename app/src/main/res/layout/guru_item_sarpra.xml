@@ -5,13 +5,13 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textview_judulguru"
+        android:id="@+id/textview_judulguru2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Judul" />
 
     <TextView
-        android:id="@+id/textview_deskripsiguru"
+        android:id="@+id/textview_deskripsiguru2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Deskripsi" />
