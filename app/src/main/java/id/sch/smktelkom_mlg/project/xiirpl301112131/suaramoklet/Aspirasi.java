@@ -9,8 +9,11 @@ import org.parceler.Parcel;
 public class Aspirasi {
         String judul;
         String deskripsi;
-
-        public Aspirasi() {
+        boolean already;
+        public Aspirasi(String judul,String deskripsi) {
+        setAlready(false);
+        this.judul = judul;
+        this.deskripsi = deskripsi;
         }
 
         public String getJudul() {
@@ -28,5 +31,9 @@ public class Aspirasi {
         public void setDeskripsi(String deskripsi) {
             this.deskripsi = deskripsi;
         }
+
+        public boolean getAlready(){return this.already    ;}
+
+        public void setAlready(boolean already){this.already = already;}
     }
 

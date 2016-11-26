@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class AdapterAdmin extends RecyclerView.Adapter<AdapterAdmin.ViewHolder> 
         final Aspirasi asp = asplist.get(position);
         holder.tvJudul.setText(asp.getJudul());
         holder.tvDeskripsi.setText(asp.getDeskripsi());
+
     }
 
     @Override
@@ -36,9 +38,12 @@ public class AdapterAdmin extends RecyclerView.Adapter<AdapterAdmin.ViewHolder> 
             return asplist.size();
         return 0;
     }
-
+    public AdapterAdmin(ArrayList<Aspirasi> asp){
+        this.asplist = asp;
+    }
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvJudul,tvDeskripsi;
+        ImageButton ibHapus,ibKirim;
         public ViewHolder(View itemView) {
             super(itemView);
             tvJudul = (TextView) itemView.findViewById(R.id.textview_judul);
