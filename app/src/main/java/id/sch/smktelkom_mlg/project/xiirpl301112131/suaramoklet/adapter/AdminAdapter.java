@@ -11,7 +11,7 @@ import com.firebase.client.Query;
 
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.Aspirasi;
+import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.model.Aspirasi;
 import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.R;
 
 /**
