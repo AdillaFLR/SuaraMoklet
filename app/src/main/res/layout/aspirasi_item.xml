@@ -2,17 +2,90 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/textview_judul"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    android:id="@+id/cardviewadmin"
+    android:foreground="?attr/selectableItemBackground"
+android:orientation="vertical"
+>
 
-    <TextView
-        android:id="@+id/textview_deskripsi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/textview_judul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Judul"
+                        android:textSize="26dp"
+                        android:textColor="#9c1a1a" />
+
+                <FrameLayout
+                    android:layout_width="17dp"
+                    android:layout_height="match_parent"></FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Kategory"
+                    android:id="@+id/textview_kategory" />
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/textview_deskripsi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deskripsi"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButtonHapus"
+                android:layout_weight="1"
+                android:src="@drawable/ic_delete_black_24dp"
+                android:background="#dd2c00" />
+
+            <Space
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButtonKirim"
+                android:layout_weight="1"
+                android:src="@drawable/ic_send_black_24dp"
+                android:background="#dd2c00" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
+
+
