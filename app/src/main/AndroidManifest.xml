@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".SarpraPanel"></activity>
         <activity android:name=".GuruPanel"></activity>
+        <activity android:name=".User"></activity>
     </application>
 
 </manifest>

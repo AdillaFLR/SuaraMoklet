@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.adapter.GuruAdapter;
+import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.model.User;
+
 /**
  * Created by Asus X450 on 11/20/2016.
  */
