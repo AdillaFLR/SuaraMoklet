@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,9 +22,9 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private Button bLogin;
+    private Button bSignup;
     private EditText editTextEmail;
     private EditText editTextPass;
-    private TextView textViewSignup;
     private ProgressDialog progressDialog;
     private FirebaseAuth Auth;
 
@@ -36,10 +35,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_login);
 
         bLogin = (Button) findViewById(R.id.buttonLogin);
+        bSignup = (Button) findViewById(R.id.buttonSignUp);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPass = (EditText) findViewById(R.id.editTextPass);
-        textViewSignup = (TextView) findViewById(R.id.textViewSignUp);
+
         progressDialog = new ProgressDialog(this);
+
 
         Auth = FirebaseAuth.getInstance();
         if (Auth.getCurrentUser() != null) {
@@ -48,12 +49,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         }
 
         bLogin.setOnClickListener(this);
-        textViewSignup.setOnClickListener(this);
+        bSignup.setOnClickListener(this);
     }
 
 
     private void userLogin() {
-        String email = editTextEmail.getText().toString().trim();
+        final String email = editTextEmail.getText().toString().trim();
         String password = editTextPass.getText().toString().trim();
 
 
@@ -71,6 +72,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         //end validasi form OK
 
         //proses login, pencocokan data dengan firebase
+        Auth.createUserWithEmailAndPassword("a", "a");
         Auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -78,7 +80,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         progressDialog.dismiss();
                         if (task.isSuccessful()) {
                             finish();
-                            startActivity(new Intent(getApplicationContext(), AdminPanel.class));
+                            if (email.contains("@student")) {
+                                startActivity(new Intent(getApplicationContext(), AdminPanel.class));
+                            } else if (email.contains("@smk")) {
+                                startActivity(new Intent(getApplicationContext(), Choose.class));
+                            } else {
+                                startActivity(new Intent(getApplicationContext(), User.class));
+                            }
+
                         } else {
                             Toast.makeText(getApplicationContext(), "Password atau Username salah", Toast.LENGTH_SHORT).show();
                         }
@@ -91,8 +100,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         if (view == bLogin) {
             userLogin();
         }
-        if (view == textViewSignup) {
-            finish();
+        if (view == bSignup) {
             startActivity(new Intent(this, MainActivity.class));
         }
 
