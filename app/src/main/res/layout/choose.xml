@@ -1,40 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <Button
         android:id="@+id/buttonKesiswaan"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/buttonSarpra"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="KESISWAAN"
+        android:layout_marginBottom="74dp"
+        android:background="@drawable/btkesiswaan"
         android:textColor="@color/abc_primary_text_disable_only_material_dark" />
 
     <Button
         android:id="@+id/buttonSarpra"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_alignLeft="@+id/buttonKesiswaan"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/buttonKesiswaan"
         android:layout_gravity="center_vertical"
-        android:layout_marginBottom="167dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="SARPRA"
+        android:layout_marginBottom="188dp"
+        android:background="@drawable/btsarpra"
         android:textColor="#ffffff" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonKesiswaan"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="66dp"
-        android:text="CHOOSE"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

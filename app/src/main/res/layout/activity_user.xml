@@ -1,57 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1">
 
     <EditText
-        android:id="@+id/editTextaspirasi"
+        android:id="@+id/editText3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioGroup"
         android:layout_weight="0.33"
         android:ems="10"
         android:inputType="textMultiLine" />
 
     <RadioGroup
-        android:id="@+id/rgStatus"
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.08">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="159dp"
-            android:layout_height="wrap_content"
-            android:text="     Kategori" />
-
-        <RadioButton
-            android:id="@+id/radiokesiswaan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="Kesiswaan" />
-
-        <RadioButton
-            android:id="@+id/radiosarpra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="Sarana dan Prasarana" />
 
     </RadioGroup>
 
     <Button
         android:id="@+id/buttonOK"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="110dp"
+        android:background="@drawable/submit" />
+
+    <RadioButton
+        android:id="@+id/radiosarpra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK" />
+        android:layout_above="@+id/buttonOK"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="28dp"
+        android:checked="false"
+        android:text="Sarana dan Prasarana" />
+
+    <RadioButton
+        android:id="@+id/radiokesiswaan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radiosarpra"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false"
+        android:text="Kesiswaan" />
 
     <TextView
-        android:id="@+id/hasil"
-        android:layout_width="203dp"
+        android:id="@+id/textView4"
+        android:layout_width="159dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.08"
-        android:text="New Text" />
-</LinearLayout>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="     Kategori"
+        android:textSize="@dimen/activity_horizontal_margin" />
+</RelativeLayout>

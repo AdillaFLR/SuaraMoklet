@@ -8,21 +8,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.GuruPanel;
+import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.GuruAspirasi;
 import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.R;
-import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.model.Aspirasi;
 
 /**
- * Created by SMK Telkom SP Malang on 20-Nov-16.
+ * Created by SMK Telkom SP Malang on 22-Nov-16.
  */
-public class GuruAdapter extends RecyclerView.Adapter<GuruAdapter.ViewHolder> {
-    ArrayList<Aspirasi> asplist;
-    GuruPanel adp;
-
-    public GuruAdapter(ArrayList<Aspirasi> asp, GuruPanel adp) {
-        this.asplist = asp;
-        this.adp = adp;
-    }
+public class AdapterAdminGuru extends RecyclerView.Adapter<AdapterAdminGuru.ViewHolder> {
+    ArrayList<GuruAspirasi> asplist;
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -32,8 +25,8 @@ public class GuruAdapter extends RecyclerView.Adapter<GuruAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
-        final Aspirasi asp = asplist.get(position);
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        final GuruAspirasi asp = asplist.get(position);
         holder.tvJudul.setText(asp.getJudul());
         holder.tvDeskripsi.setText(asp.getDeskripsi());
     }
@@ -52,6 +45,7 @@ public class GuruAdapter extends RecyclerView.Adapter<GuruAdapter.ViewHolder> {
             super(itemView);
             tvJudul = (TextView) itemView.findViewById(R.id.textview_judulguru);
             tvDeskripsi = (TextView) itemView.findViewById(R.id.textview_deskripsiguru);
+
         }
     }
 }

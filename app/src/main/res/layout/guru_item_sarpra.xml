@@ -7,16 +7,16 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textview_judulguru"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_judulguru2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Judul"
         android:textColor="#bd0000"
         android:textSize="@dimen/abc_dialog_padding_material" />
 
     <TextView
-        android:id="@+id/textview_deskripsiguru"
-        android:layout_width="wrap_content"
+        android:id="@+id/textview_deskripsiguru2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Deskripsi"
         android:textColor="#000000"
