@@ -1,46 +1,71 @@
 package id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet;
 
-import android.os.Bundle;
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.TextView;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 
-public class User extends AppCompatActivity {
-    TextView tampiljudul, tampildesk;
+import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.model.Aspirasi;
+import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.model.AspirasiFB;
+
+public class User extends AppCompatActivity implements View.OnClickListener {
+
+    private EditText eAspirasi, eJudul;
+    private RadioButton rKesiswaan, rSarpra;
+    private Button bOk;
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
-
-        RadioButton radioK, radioS;
-        TextView tvHasil;
-
-
         Firebase.setAndroidContext(this);
-        Firebase ref = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/kesiswaan/ak01/judul");
-        Firebase ref2 = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/kesiswaan/ak01/deskripsi");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot ds) {
-                tampiljudul.setText(ds.getValue().toString());
-            }
+        eJudul = (EditText) findViewById(R.id.editTextJudul);
+        eAspirasi = (EditText) findViewById(R.id.editTextAspirasi);
+        rKesiswaan = (RadioButton) findViewById(R.id.radiokesiswaan);
+        rSarpra = (RadioButton) findViewById(R.id.radiosarpra);
+        bOk = (Button) findViewById(R.id.buttonOK);
 
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
+        pDialog = new ProgressDialog(this);
 
-            }
-        });
+        bOk.setOnClickListener(this);
 
-        radioK = (RadioButton) findViewById(R.id.radiokesiswaan);
-        radioS = (RadioButton) findViewById(R.id.radiosarpra);
+    }
 
-        tvHasil = (TextView) findViewById(R.id.editText3);
 
+    private void aspirasi() {
+        String aspirasi = eAspirasi.getText().toString().trim();
+        String judul = eJudul.getText().toString().trim();
+        String kategori = rSarpra.isChecked() ? "sarpra" : "kesiswaan";
+
+        if (TextUtils.isEmpty(aspirasi) || TextUtils.isEmpty(judul)) {
+            Toast.makeText(this, "Tolong diisi", Toast.LENGTH_SHORT).show();
+            return;
+        } else {
+            pDialog.setMessage("Mengirim...");
+            pDialog.show();
+            tambahdata(judul, aspirasi, kategori);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == bOk) {
+            aspirasi();
+        }
+    }
+
+    public void tambahdata(String jd, String ds, String kt) {
+        Firebase sender = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/");
+        AspirasiFB aspfb = new AspirasiFB(jd, ds, kt);
+        sender.child("admin").push().setValue(aspfb);
     }
 }
