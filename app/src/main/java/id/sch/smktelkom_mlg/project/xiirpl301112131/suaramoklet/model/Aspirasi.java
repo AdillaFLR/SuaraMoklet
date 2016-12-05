@@ -62,10 +62,11 @@ public class Aspirasi {
         public void setKategori(String kategori) {
             this.kategori = kategori;
         }
-        public void delete(){
+
+    public void delete() {
             Firebase deletor = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/admin/"+id);
             deletor.setValue(null);
-        }
+    }
     public void kirim(Aspirasi asp){
         Firebase sender = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/");
         AspirasiFB aspfb = new AspirasiFB(asp.getJudul(),asp.getDeskripsi(),asp.getKategori());

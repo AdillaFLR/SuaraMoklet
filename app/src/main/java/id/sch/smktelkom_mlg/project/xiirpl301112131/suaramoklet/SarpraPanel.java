@@ -1,102 +1,110 @@
 package id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-
-import org.parceler.Parcels;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.adapter.SarpraAdapter;
+import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.model.Aspirasi;
 
 /**
  * Created by SMK Telkom SP Malang on 22-Nov-16.
  */
 public class SarpraPanel extends AppCompatActivity {
-
-    private final static String SAVED_ADAPTER_ITEMS = "SAVED_ADAPTER_ITEMS";
-    private final static String SAVED_ADAPTER_KEYS = "SAVED_ADAPTER_KEYS";
-
-    private com.firebase.client.Query mQuery;
-    private SarpraAdapter mAdminAdapter;
-    private ArrayList<SarpraAspirasi> mAdapterItems;
-    private ArrayList<String> mAdapterKeys;
-
+    Map<Integer, Aspirasi> mapias = new HashMap<Integer, Aspirasi>();
+    ArrayList<Aspirasi> aspl = new ArrayList<Aspirasi>();
+    SarpraAdapter mAdapter;
+    Firebase ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.guru_recycler_sarpra);
-
-        handleInstanceState(savedInstanceState);
-        setupFirebase();
-        setupRecyclerview();
-        Button btn = (Button) findViewById(R.id.buttonRefreshGuru2);
-        btn.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_admin_panel);
+        Firebase.setAndroidContext(this);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAdminAdapter.notifyDataSetChanged();
+                refreshData();
             }
         });
+        ref = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/sarpra");
+        RecyclerView rv = (RecyclerView) findViewById(R.id.rvAdmin);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        rv.setLayoutManager(layoutManager);
+        mAdapter = new SarpraAdapter(aspl, SarpraPanel.this);
+        rv.setAdapter(mAdapter);
+        filldata();
+        refreshData();
     }
 
-    // Restoring the item list and the keys of the items: they will be passed to the adapter
-    private void handleInstanceState(Bundle savedInstanceState) {
-        if (savedInstanceState != null &&
-                savedInstanceState.containsKey(SAVED_ADAPTER_ITEMS) &&
-                savedInstanceState.containsKey(SAVED_ADAPTER_KEYS)) {
-            mAdapterItems = Parcels.unwrap(savedInstanceState.getParcelable(SAVED_ADAPTER_ITEMS));
-            mAdapterKeys = savedInstanceState.getStringArrayList(SAVED_ADAPTER_KEYS);
-        } else {
-            mAdapterItems = new ArrayList<SarpraAspirasi>();
-            mAdapterKeys = new ArrayList<String>();
+    public void filldata() {
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int i = 0;
+                for (DataSnapshot ds : dataSnapshot.getChildren()
+                        ) {
+                    String judul = "null";
+                    String deskr = "null";
+                    String idx = "null";
+                    if (null == ds.child("judul").getValue(String.class) || null == ds.child("deskripsi").getValue(String.class)) {
+
+                    } else {
+                        idx = ds.getKey();
+                        judul = ds.child("judul").getValue(String.class);
+                        deskr = ds.child("deskripsi").getValue(String.class);
+                        aspl.clear();
+                    }
+
+                    mapias.put(i, new Aspirasi(idx, judul, deskr, ""));
+
+                    i++;
+                }
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Do something after 5s = 5000ms
+                        refreshData();
+                    }
+                }, 1554);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+        refreshData();
+    }
+
+    public void refreshData() {
+        for (int i = 0; i <= (mapias.size() - 1); i++) {
+            if (mapias.get(i) == null) {
+
+            } else {
+                if (mapias.get(i).getAlready()) {
+                } else {
+                    aspl.add(mapias.get(i));
+                    mapias.get(i).setAlready(true);
+                }
+            }
+
         }
+        mAdapter.notifyDataSetChanged();
     }
 
-    private void setupFirebase() {
-        Firebase.setAndroidContext(this);
-        String firebaseLocation = getResources().getString(R.string.firebase_location);
-        Firebase ref = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/sarpra");
-        mQuery = ref.orderByChild("judul");
-
-    }
-
-    private void setupRecyclerview() {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewGuru);
-        mAdminAdapter = new SarpraAdapter(mQuery, SarpraAspirasi.class, mAdapterItems, mAdapterKeys);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(mAdminAdapter);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return item.getItemId() == R.id.action_settings || super.onOptionsItemSelected(item);
-    }
-
-    // Saving the list of items and keys of the items on rotation
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putParcelable(SAVED_ADAPTER_ITEMS, Parcels.wrap(mAdminAdapter.getItems()));
-        outState.putStringArrayList(SAVED_ADAPTER_KEYS, mAdminAdapter.getKeys());
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mAdminAdapter.destroy();
-    }
 }

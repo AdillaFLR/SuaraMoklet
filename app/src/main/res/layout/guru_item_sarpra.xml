@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginBottom="10dp"
+    android:background="#f5f1f1"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/textview_judulguru2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Judul" />
+        android:text="Judul"
+        android:textColor="#bd0000"
+        android:textSize="@dimen/abc_dialog_padding_material" />
 
     <TextView
         android:id="@+id/textview_deskripsiguru2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Deskripsi" />
+        android:text="Deskripsi"
+        android:textColor="#000000"
+        android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material" />
 
 
 </LinearLayout>
