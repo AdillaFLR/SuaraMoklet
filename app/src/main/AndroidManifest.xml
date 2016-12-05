@@ -10,9 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Login">
-
         </activity>
         <activity
             android:name=".AdminPanel"
@@ -22,11 +21,14 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>z
+            </intent-filter>
+            z
         </activity>
-        <activity android:name=".Choose"></activity>
-        <activity android:name=".SarpraPanel"></activity>
-        <activity android:name=".GuruPanel"></activity>
+        <activity android:name=".Choose" />
+        <activity android:name=".SarpraPanel" />
+        <activity android:name=".GuruPanel" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".User" />
     </application>
 
 </manifest>

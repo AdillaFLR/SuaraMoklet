@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,28 +18,22 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-/**
- * Created by Asus X450 on 11/20/2016.
- */
-public class Login extends AppCompatActivity implements View.OnClickListener {
+public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
-    private Button bLogin;
+    FirebaseAuth Auth;
+    private EditText eEmail;
+    private EditText ePass;
     private Button bSignup;
-    private EditText editTextEmail;
-    private EditText editTextPass;
     private ProgressDialog progressDialog;
-    private FirebaseAuth Auth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        bLogin = (Button) findViewById(R.id.buttonLogin);
+        setContentView(R.layout.activity_sign_up);
+        Auth = FirebaseAuth.getInstance();
+        eEmail = (EditText) findViewById(R.id.editTextEmail);
+        ePass = (EditText) findViewById(R.id.editTextPass);
         bSignup = (Button) findViewById(R.id.buttonSignUp);
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPass = (EditText) findViewById(R.id.editTextPass);
 
         progressDialog = new ProgressDialog(this);
 
@@ -48,14 +44,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             startActivity(new Intent(getApplicationContext(), AdminPanel.class));
         }
 
-        bLogin.setOnClickListener(this);
         bSignup.setOnClickListener(this);
     }
 
-
-    private void userLogin() {
-        final String email = editTextEmail.getText().toString().trim();
-        String password = editTextPass.getText().toString().trim();
+    private void userSignup() {
+        final String email = eEmail.getText().toString().trim();
+        String password = ePass.getText().toString().trim();
 
 
         if (TextUtils.isEmpty(email)) {
@@ -67,26 +61,17 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             return;
         }
 
-        progressDialog.setMessage("Login User...");
+        progressDialog.setMessage("Signup...");
         progressDialog.show();
-        //end validasi form OK
 
-        //proses login, pencocokan data dengan firebase
-        Auth.signInWithEmailAndPassword(email, password)
+        Auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         if (task.isSuccessful()) {
                             finish();
-                            if (email.contains("@student")) {
-                                startActivity(new Intent(getApplicationContext(), AdminPanel.class));
-                            } else if (email.contains("@smk")) {
-                                startActivity(new Intent(getApplicationContext(), Choose.class));
-                            } else {
-                                startActivity(new Intent(getApplicationContext(), Choose.class));
-                            }
-
+                            Toast.makeText(getApplicationContext(), "Akun berhasil dibuat", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(getApplicationContext(), "Password atau Username salah", Toast.LENGTH_SHORT).show();
                         }
@@ -94,14 +79,36 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 });
     }
 
+
     @Override
-    public void onClick(View view) {
-        if (view == bLogin) {
-            userLogin();
-        } else if (view == bSignup) {
-            startActivity(new Intent(getBaseContext(), SignUp.class));
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menuadmin, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_logout) {
+            Auth.signOut();
+            finish();
+            startActivity(new Intent(this, Login.class));
+            return true;
         }
 
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == bSignup) {
+            userSignup();
+        }
     }
 }
-
