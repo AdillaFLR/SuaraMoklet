@@ -17,16 +17,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.adapter.GuruAdapter;
+import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.adapter.SarpraAdapter;
 import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.model.Aspirasi;
 
 /**
- * Created by SMK Telkom SP Malang on 20-Nov-16.
+ * Created by SMK Telkom SP Malang on 22-Nov-16.
  */
-public class GuruPanel extends AppCompatActivity {
+public class SarpraPanel extends AppCompatActivity {
     Map<Integer, Aspirasi> mapias = new HashMap<Integer, Aspirasi>();
     ArrayList<Aspirasi> aspl = new ArrayList<Aspirasi>();
-    GuruAdapter mAdapter;
+    SarpraAdapter mAdapter;
     Firebase ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +40,11 @@ public class GuruPanel extends AppCompatActivity {
                 refreshData();
             }
         });
-        ref = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/kesiswaan");
+        ref = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/sarpra");
         RecyclerView rv = (RecyclerView) findViewById(R.id.rvAdmin);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         rv.setLayoutManager(layoutManager);
-        mAdapter = new GuruAdapter(aspl, GuruPanel.this);
+        mAdapter = new SarpraAdapter(aspl, SarpraPanel.this);
         rv.setAdapter(mAdapter);
         filldata();
         refreshData();
@@ -59,7 +59,6 @@ public class GuruPanel extends AppCompatActivity {
                         ) {
                     String judul = "null";
                     String deskr = "null";
-                    String kateg = "null";
                     String idx = "null";
                     if (null == ds.child("judul").getValue(String.class) || null == ds.child("deskripsi").getValue(String.class)) {
 
@@ -67,11 +66,10 @@ public class GuruPanel extends AppCompatActivity {
                         idx = ds.getKey();
                         judul = ds.child("judul").getValue(String.class);
                         deskr = ds.child("deskripsi").getValue(String.class);
-                        kateg = ds.child("kategori").getValue(String.class);
                         aspl.clear();
                     }
 
-                    mapias.put(i, new Aspirasi(idx, judul, deskr, kateg));
+                    mapias.put(i, new Aspirasi(idx, judul, deskr, ""));
 
                     i++;
                 }
