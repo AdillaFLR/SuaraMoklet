@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity android:name=".Login"></activity>
-        <activity android:name=".User">
+
         <activity android:name=".User">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -20,12 +20,6 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
-
-        <activity android:name=".AdminPanel"></activity>
-        <activity android:name=".Choose">
-       </activity>
-        <activity android:name=".SarpraPanel"></activity>
-        <activity android:name=".GuruPanel"></activity>
         <activity
             android:name=".AdminPanel"
             android:label="@string/title_activity_admin_panel"
