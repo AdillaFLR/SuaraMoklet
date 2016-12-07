@@ -38,7 +38,7 @@
 
 
 ###Link Video Demonstrasi Aplikasi SuaraMoklet https://youtu.be/EyvUtpc7SNM
-<a href="https://youtu.be/EyvUtpc7SNM"><img src="https://github.com/AdillaFLR/SuaraMoklet/blob/master/WhatsApp%20Image%202016-12-07%20at%2011.58.12%20PM%20(1).jpeg"/></a>
+<a href="https://youtu.be/EyvUtpc7SNM"><img src="https://github.com/AdillaFLR/SuaraMoklet/blob/master/WhatsApp%20Image%202016-12-07%20at%2011.58.13%20PM.jpeg"/></a>
 
 
 **Nama** | **Kelas** | **NIS** | **Absen** | **Nama Sekolah**
