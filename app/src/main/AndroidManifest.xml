@@ -10,26 +10,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Login">
+        <activity android:name=".MainActivity">
         </activity>
-        <activity
-            android:name=".AdminPanel"
-            android:label="@string/title_activity_admin_panel"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Login"></activity>
 
-        </activity>
-        <activity android:name=".Choose" />
-        <activity android:name=".SarpraPanel" />
-        <activity android:name=".GuruPanel" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".User">
+        <activity android:name=".AdminPanel">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Choose">
+       </activity>
+        <activity android:name=".SarpraPanel"></activity>
+        <activity android:name=".GuruPanel"></activity>
     </application>
 
 </manifest>

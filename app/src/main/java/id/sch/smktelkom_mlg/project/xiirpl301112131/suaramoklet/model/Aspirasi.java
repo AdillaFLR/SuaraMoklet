@@ -4,6 +4,8 @@ import com.firebase.client.Firebase;
 
 import org.parceler.Parcel;
 
+import java.util.ArrayList;
+
 /**
  * Created by nabila on 11/20/2016.
  */
@@ -71,6 +73,10 @@ public class Aspirasi {
         Firebase sender = new Firebase("https://suaramoklet.firebaseio.com/aspirasi/");
         AspirasiFB aspfb = new AspirasiFB(asp.getJudul(),asp.getDeskripsi(),asp.getKategori());
         sender.child(kategori).push().setValue(aspfb);
+        Integer lalamambu = new Integer("4");
+
+        ArrayList<String> as = new ArrayList<String>();
+
     }
     }
 

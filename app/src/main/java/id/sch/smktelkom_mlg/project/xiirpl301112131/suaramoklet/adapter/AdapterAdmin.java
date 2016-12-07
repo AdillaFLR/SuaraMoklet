@@ -1,6 +1,8 @@
 package id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.adapter;
 
+import android.content.DialogInterface;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,6 +64,7 @@ public class AdapterAdmin extends RecyclerView.Adapter<AdapterAdmin.ViewHolder> 
                         adp.refreshData();
                     }
                 }, 1554);
+
             }
         });
     }
