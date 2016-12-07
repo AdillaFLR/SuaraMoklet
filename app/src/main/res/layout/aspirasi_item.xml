@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
 
     android:id="@+id/cardviewadmin"
     android:foreground="?attr/selectableItemBackground"
@@ -38,13 +39,15 @@ android:orientation="vertical"
                     android:layout_width="17dp"
                     android:layout_height="match_parent"></FrameLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="Kategory"
-                    android:id="@+id/textview_kategory" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Kategori"
+                android:id="@+id/textview_kategory"
+                android:textStyle="bold" />
 
             <TextView
                     android:id="@+id/textview_deskripsi"
@@ -63,24 +66,28 @@ android:orientation="vertical"
 
             <ImageButton
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="30dp"
                 android:id="@+id/imageButtonHapus"
                 android:layout_weight="1"
-                android:src="@drawable/ic_delete_black_24dp"
-                android:background="#dd2c00" />
+                android:src="@drawable/ic_delete_black_24dp1"
+                android:background="@drawable/roundedcornerdelete"
+                android:layout_gravity="center_vertical" />
+
+
 
             <Space
-                android:layout_width="5dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="0.49" />
 
             <ImageButton
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="30dp"
                 android:id="@+id/imageButtonKirim"
                 android:layout_weight="1"
                 android:src="@drawable/ic_send_black_24dp"
-                android:background="#dd2c00" />
+                android:background="@drawable/roundedcorner"
+                android:layout_gravity="center_vertical" />
 
         </LinearLayout>
 

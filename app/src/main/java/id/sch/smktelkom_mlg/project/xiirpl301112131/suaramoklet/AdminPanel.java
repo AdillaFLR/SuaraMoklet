@@ -49,8 +49,8 @@ refreshData();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         rv.setLayoutManager(layoutManager);
         mAdapter = new AdapterAdmin(aspl, AdminPanel.this);
