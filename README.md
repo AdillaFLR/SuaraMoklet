@@ -37,6 +37,9 @@
 ###Link File APK https://drive.google.com/drive/u/0/my-drive
 
 
+###Link Video Demonstrasi Aplikasi SuaraMoklet 
+
+
 **Nama** | **Kelas** | **NIS** | **Absen** | **Nama Sekolah**
 ------------ | ------------- | ------------ | ------------ | -------------
 Adilla Fedelia | XII RPL 3 | 4270/1168.070 | 01 | SMK Telkom Malang
