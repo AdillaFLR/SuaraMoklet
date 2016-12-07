@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.adapter.GuruAdapter;
 import id.sch.smktelkom_mlg.project.xiirpl301112131.suaramoklet.model.User;
 
 /**
@@ -83,7 +82,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         if (task.isSuccessful()) {
                             finish();
                             if (email.contains("@student")) {
-                                startActivity(new Intent(getApplicationContext(), AdminPanel.class));
+                                startActivity(new Intent(getApplicationContext(), User.class));
                             } else if (email.contains("@smk")) {
                                 startActivity(new Intent(getApplicationContext(), Choose.class));
                             } else {

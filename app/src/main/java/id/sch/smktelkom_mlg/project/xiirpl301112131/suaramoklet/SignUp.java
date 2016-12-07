@@ -64,6 +64,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         progressDialog.setMessage("Signup...");
         progressDialog.show();
 
+
         Auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
