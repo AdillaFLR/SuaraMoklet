@@ -34,6 +34,7 @@ public class User extends AppCompatActivity implements View.OnClickListener {
         rSarpra = (RadioButton) findViewById(R.id.radiosarpra);
         bOk = (Button) findViewById(R.id.buttonOK);
 
+
         pDialog = new ProgressDialog(this);
 
         bOk.setOnClickListener(this);
