@@ -5,7 +5,7 @@
 
 
 **Nama** | **Kelas** | **NIS** | **Absen** | **Nama Sekolah**
------------- | ------------- | ------------ | -------------
+------------ | ------------- | ------------ | ------------ | -------------
 Adilla Fedelia | XII RPL 3 | 4270/1168.070 | 01 | SMK Telkom Malang
 Dhita Shandy Faristyawati | XII RPL 3 | 4323/1221.063 | 11 | SMK Telkom Malang
 Nabila Qonita | XII RPL 3 | 6579/6787.987 | 21 | SMK Telkom Malang
