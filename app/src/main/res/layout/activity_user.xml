@@ -62,6 +62,7 @@
         android:textSize="@dimen/activity_horizontal_margin" />
 
     <RadioGroup
+        android:id="@+id/kategori"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/buttonOK"
@@ -93,6 +94,7 @@
 
     </RadioGroup>
 
+
     <Button
         android:id="@+id/buttonOK"
         android:layout_width="190dp"
@@ -102,5 +104,6 @@
         android:layout_gravity="center"
         android:layout_marginBottom="110dp"
         android:background="@drawable/submit" />
+
 
 </LinearLayout>

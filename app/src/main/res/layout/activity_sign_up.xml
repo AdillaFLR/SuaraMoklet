@@ -18,18 +18,18 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="163dp"
         android:hint="Email"
-        android:textColor="@color/white" />
+        android:textColor="@android:color/black" />
 
     <EditText
         android:id="@+id/editTextPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
+
         android:layout_below="@+id/editTextEmail"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@color/white" />
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/buttonSignUp"
@@ -37,5 +37,6 @@
         android:layout_height="30dp"
         android:layout_below="@+id/editTextPass"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/buttonlogin" />
+        android:layout_marginTop="37dp"
+        android:background="@drawable/signup" />
 </RelativeLayout>

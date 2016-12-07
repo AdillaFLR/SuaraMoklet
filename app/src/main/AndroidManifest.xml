@@ -12,6 +12,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity android:name=".Login">
+
+        </activity>
+        <activity android:name=".User">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".AdminPanel"
@@ -23,13 +31,7 @@
         <activity android:name=".SarpraPanel" />
         <activity android:name=".GuruPanel" />
         <activity android:name=".SignUp" />
-        <activity android:name=".User">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
