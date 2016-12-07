@@ -13,14 +13,15 @@
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".Login"></activity>
-
-        <activity android:name=".AdminPanel">
+        <activity android:name=".User">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+
+        <activity android:name=".AdminPanel"></activity>
         <activity android:name=".Choose">
        </activity>
         <activity android:name=".SarpraPanel"></activity>
