@@ -4,29 +4,34 @@
 > **SUARA MOKLET** adalah aplikasi yang dibuat untuk memudahkan siswa SMK Telkom Malang dalam menyampaikan aspirasi mengenai kesiswaan maupun sarana dan prasarana. Pihak MPK yang akan bertindak sebagai admin akan menyalurkan aspirasi siswa SMK Telkom Malang kepada guru yang diberikan akses untuk melihat aspirasi para siswa. Aplikasi ini tentunya mempunyai kelebihan, yaitu lebih ramah lingkungan artinya menghemat pemakaian kertas yang sebelum adanya aplikasi ini dilakukan secara manual menggunakan satu lembar kertas, selain itu lebih menghemat waktu yaitu aspirasi yang biasanya memerlukan waktu yang lama karena menunggu petugas MPK menuju masing-masing kelas, kini bisa dilakukan kapanpun selama masih menjadi siswa SMK Telkom Malang.
 
 
-###Tampilan Login User:
+###Tampilan Login:
 
-![Image of F1](https://github.com/DhitaShandyFaristyawati/Foodies/blob/master/F1.png)
+![Image of F1](https://github.com/AdillaFLR/SuaraMoklet/blob/master/WhatsApp%20Image%202016-12-07%20at%2011.58.13%20PM.jpeg)
 
 ###Tampilan Sign Up:
 
-![Image of F2](https://github.com/DhitaShandyFaristyawati/Foodies/blob/master/F2.png)
+![Image of F2](https://github.com/AdillaFLR/SuaraMoklet/blob/master/WhatsApp%20Image%202016-12-07%20at%2011.58.10%20PM%20(1).jpeg)
 
 ###Tampilan User Siswa:
 
-![Image of F3](https://github.com/DhitaShandyFaristyawati/Foodies/blob/master/F3.png)
+![Image of F3](https://github.com/AdillaFLR/SuaraMoklet/blob/master/WhatsApp%20Image%202016-12-07%20at%2011.58.12%20PM%20(1).jpeg)
 
 ###Tampilan User Admin:
 
-![Image of F4](https://github.com/DhitaShandyFaristyawati/Foodies/blob/master/F4.png)
+![Image of F4](https://github.com/AdillaFLR/SuaraMoklet/blob/master/WhatsApp%20Image%202016-12-07%20at%2011.58.11%20PM.jpeg)
+
+###Tampilan User Guru (Choose):
+
+![Image of F5](https://github.com/AdillaFLR/SuaraMoklet/blob/master/WhatsApp%20Image%202016-12-07%20at%2011.58.10%20PM.jpeg)
 
 ###Tampilan User Guru (Choose Kesiswaan):
 
-![Image of F5](https://github.com/DhitaShandyFaristyawati/Foodies/blob/master/F5.png)
+![Image of F6](https://github.com/AdillaFLR/SuaraMoklet/blob/master/WhatsApp%20Image%202016-12-07%20at%2011.58.09%20PM.jpeg)
 
 ###Tampilan User Guru (Choose Sarpra):
 
-![Image of F6](https://github.com/DhitaShandyFaristyawati/Foodies/blob/master/F5.png)
+![Image of F7](https://github.com/AdillaFLR/SuaraMoklet/blob/master/WhatsApp%20Image%202016-12-07%20at%2011.58.12%20PM.jpeg)
+
 
 
 ###Link File APK https://drive.google.com/drive/u/0/my-drive
