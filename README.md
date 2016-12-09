@@ -3,9 +3,11 @@
 
 > **SUARA MOKLET** adalah aplikasi yang dibuat untuk memudahkan siswa SMK Telkom Malang dalam menyampaikan aspirasi mengenai kesiswaan maupun sarana dan prasarana. Pihak MPK yang akan bertindak sebagai admin akan menyalurkan aspirasi siswa SMK Telkom Malang kepada guru yang diberikan akses untuk melihat aspirasi para siswa. Aplikasi ini tentunya mempunyai kelebihan, yaitu lebih ramah lingkungan artinya menghemat pemakaian kertas yang sebelum adanya aplikasi ini dilakukan secara manual menggunakan satu lembar kertas, selain itu lebih menghemat waktu yaitu aspirasi yang biasanya memerlukan waktu yang lama karena menunggu petugas MPK menuju masing-masing kelas, kini bisa dilakukan kapanpun selama masih menjadi siswa SMK Telkom Malang.
 
-Untuk Login user, jika user belum terdaftar maka harus melakukan sign up terlebih dahulu menggunakan email siswa dengan menggunakan **@student**. Apabila sudah terdaftar sebagai user maka dapat melakukan login (contoh : dhita_faristyawati_23rpl@student.smktelkom-mlg.sch.id)
-Untuk Login admin, jika admin belum terdaftar maka harus melakukan sign up terlebih dahulu menggunakan email khusus untuk admin dengan menggunakan **@gmail**. Apabila sudah terdaftar sebagai admin maka dapat melakukan login (contoh : dhitashandy@gmail.com)
-Untuk Login guru, jika guru belum terdaftar maka harus melakukan sign up terlebih dahulu menggunakan email guru dengan menggunakan **@smktelkom**. Apabila sudah terdaftar sebagai guru maka dapat melakukan login (contoh : dhita_faristyawati@smktelkom-mlg.sch.id)
+* Untuk Login user, jika user belum terdaftar maka harus melakukan sign up terlebih dahulu menggunakan email siswa dengan menggunakan **@student**. Apabila sudah terdaftar sebagai user maka dapat melakukan login (contoh : dhita_faristyawati_23rpl@student.smktelkom-mlg.sch.id)
+
+* Untuk Login admin, jika admin belum terdaftar maka harus melakukan sign up terlebih dahulu menggunakan email khusus untuk admin dengan menggunakan **@gmail**. Apabila sudah terdaftar sebagai admin maka dapat melakukan login (contoh : dhitashandy@gmail.com)
+
+* Untuk Login guru, jika guru belum terdaftar maka harus melakukan sign up terlebih dahulu menggunakan email guru dengan menggunakan **@smktelkom**. Apabila sudah terdaftar sebagai guru maka dapat melakukan login (contoh : dhita_faristyawati@smktelkom-mlg.sch.id)
 
 
 ###Tampilan Login:
